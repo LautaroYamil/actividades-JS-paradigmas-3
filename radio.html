@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mayor de 18</title>
+</head>
+<body>
+
+  <h2>¿Sos mayor de 18 años?</h2>
+
+  <form>
+    <label><input type="radio" name="edad" id="mayor" value="si"> Sí</label><br>
+    <label><input type="radio" name="edad" id="menor" value="no"> No</label><br><br>
+
+    <input type="button" value="Verificar" onclick="verificarEdad()">
+  </form>
+
+  <script>
+    function verificarEdad() {
+      const mayor = document.getElementById('mayor').checked;
+      const menor = document.getElementById('menor').checked;
+
+      if (!mayor && !menor) {
+        alert('Seleccioná una opción.');
+        return;
+      }
+
+      if (mayor) {
+        alert('✅ Podés ingresar al sitio (18+).');
+      } else {
+        alert('❌ No podés ingresar: el sitio es solo para mayores de 18.');
+      }
+    }
+  </script>
+
+</body>
+</html>

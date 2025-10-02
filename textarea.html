@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+  <h2>Libro de visitas</h2>
+
+  <form>
+    <p>Nombre: <input type="text" id="nombre"></p>
+    <p>Email:  <input type="text" id="email"></p>
+    <p>Comentarios:</p>
+    <p><textarea id="comentarios" rows="6" cols="40" placeholder="Escribí tu mensaje aquí..."></textarea></p>
+
+    <p><input type="button" value="Enviar" onclick="mostrarDatos()"></p>
+  </form>
+
+  <script>
+    function mostrarDatos() {
+      const nom  = document.getElementById('nombre').value.trim();
+      const mail = document.getElementById('email').value.trim();
+      const comm = document.getElementById('comentarios').value.trim();
+
+      if (!nom || !mail || !comm) {
+        alert('Completá nombre, email y comentarios.');
+        return;
+      }
+
+      alert(
+        'Datos ingresados:\n' +
+        'Nombre: ' + nom + '\n' +
+        'Email: ' + mail + '\n' +
+        'Comentarios: ' + comm
+      );
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+  <h2>Control PASSWORD</h2>
+
+  <form>
+    <p>Ingresá tu clave:
+      <input type="password" id="pass1">
+    </p>
+    <p>Repetí tu clave:
+      <input type="password" id="pass2">
+    </p>
+    <p>
+      <input type="button" value="Verificar" onclick="verificar()">
+    </p>
+  </form>
+
+  <script>
+    function verificar() {
+      const p1 = document.getElementById('pass1').value;
+      const p2 = document.getElementById('pass2').value;
+
+      // Validaciones simples
+      if (p1.length < 5 || p2.length < 5) {
+        alert('La clave debe tener al menos 5 caracteres.');
+        return;
+      }
+
+      if (p1 === p2) {
+        alert('✅ Las claves coinciden.');
+      } else {
+        alert('❌ Las claves NO coinciden.');
+      }
+    }
+  </script>
+
+</body>
+</html>

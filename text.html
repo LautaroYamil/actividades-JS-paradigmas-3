@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+  <form>
+    <p>Ingresa un entero: <input type="text" id="entero"></p>
+    <p><input type="button" value="Mostrar al cubo" onclick="mostrarCubo()"></p>
+  </form>
+
+  <script>
+    function mostrarCubo() {
+      const texto = document.getElementById('entero').value.trim();
+      const n = Number(texto);
+
+      if (!Number.isInteger(n)) {
+        alert('Por favor, ingresá un número ENTERO (sin decimales).');
+        return;
+      }
+
+      const cubo = n ** 3; 
+      alert('El número ' + n + ' elevado al cubo es: ' + cubo);
+    }
+  </script>
+
+</body>
+</html>

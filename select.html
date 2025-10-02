@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <form>
+    <p>
+      Tipo:
+      <select id="pizza" onchange="mostrarPrecio()">
+        <option value="">-- Seleccioná --</option>
+        <option value="13200">Jamón y Queso</option>
+        <option value="10500">Muzzarella</option>
+        <option value="15500">Cuatro quesos</option>
+      </select>
+    </p>
+
+    <p>
+      Precio:
+      <input type="text" id="precio" readonly>
+    </p>
+  </form>
+
+  <script>
+    function mostrarPrecio() {
+      const sel = document.getElementById('pizza');
+      const valor = sel.value; 
+      if (valor === "") {
+        document.getElementById('precio').value = "";
+        return;
+      }
+
+      const precioFormateado = '$ ' + Number(valor).toFixed(2);
+      document.getElementById('precio').value = precioFormateado;
+    }
+  </script>
+
+</body>
+</html>
