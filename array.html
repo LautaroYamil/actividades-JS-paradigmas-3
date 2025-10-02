@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio Array</title>
+</head>
+
+<body>
+
+    <script>
+        let vector = [];
+
+        for (let i = 0; i < 8; i++) {
+            let valor = parseInt(prompt("Ingrese el valor " + (i + 1) + ":"));
+            vector.push(valor);
+        }
+
+        let sumaTotal = 0;
+        let sumaMayores36 = 0;
+        let cantidadMayores50 = 0;
+
+        for (let i = 0; i < vector.length; i++) {
+            sumaTotal += vector[i]; 
+            if (vector[i] > 36) {
+                sumaMayores36 += vector[i]; 
+            }
+
+            if (vector[i] > 50) {
+                cantidadMayores50++; 
+            }
+        }
+
+        document.write("<b>Vector ingresado:</b> " + vector.join(", ") + "<br>");
+        document.write("1. Suma total de todos los elementos: " + sumaTotal + "<br>");
+        document.write("2. Suma de los elementos mayores a 36: " + sumaMayores36 + "<br>");
+        document.write("3. Cantidad de valores mayores a 50: " + cantidadMayores50 + "<br>");
+    </script>
+
+</body>
+
+</html>
